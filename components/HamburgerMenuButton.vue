@@ -8,21 +8,21 @@
       :checked="checked"
     />
     <label
-      class="hamburger bg-white border-black border-[3px] block relative w-[64px] h-[64px] z-50 rounded-full cursor-pointer"
+      class="hamburger bg-white border-black border-[3px] block relative w-[40px] h-[40px] z-50 rounded-full cursor-pointer"
       for="nav-checkbox"
     >
       <button
         aria-label="hamburger"
         class="lines block cursor-pointer"
       >
-        <div class="line-wrapper absolute left-[10px] top-[30px] top">
-          <div class="line h-[2px] w-[40px] rounded-[3px] top"></div>
+        <div class="line-wrapper absolute left-[10px] top-[17px] top">
+          <div class="line h-[2px] w-[16px] rounded-[3px] top"></div>
         </div>
         <div
-          class="line-wrapper absolute left-[10px] top-[30px] bottom"
+          class="line-wrapper absolute left-[10px] top-[17px] bottom"
         >
           <div
-            class="line h-[2px] w-[40px] rounded-[3px] bottom"
+            class="line h-[2px] w-[16px] rounded-[3px] bottom"
           ></div>
         </div>
       </button>
