@@ -3,7 +3,7 @@
     width="480"
     height="480"
     viewBox="0 0 580 580"
-    class="mt-12 md:mt-24 md:ml-24 scale-75 md:scale-100"
+    class="mt-12 md:mt-24 md:ml-24 scale-[0.7] md:scale-100"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
