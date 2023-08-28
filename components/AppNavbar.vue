@@ -32,12 +32,12 @@ const toggleMobileNav = (): void => {
     class="w-full px-3 flex items-center justify-between mx-auto md:px-12 py-6"
   >
     <AppLogo />
-    <div class="flex space-x-4">
+    <div class="flex space-x-2">
       <AppButton
         v-show="mobileNav"
-        class="!flex w-16 h-16 lg:!hidden"
+        class="!flex !w-10 !h-10 lg:!hidden z-40"
       >
-        <Icon icon="akar-icons:search" class="w-6 h-6" />
+        <Icon icon="akar-icons:search" class="w-4 h-4" />
       </AppButton>
       <HamburgerMenuButton
         :checked="mobileNav"
@@ -49,13 +49,7 @@ const toggleMobileNav = (): void => {
     >
       <ul class="flex space-x-8 items-center">
         <li v-for="link in links" :key="link.name">
-          <NuxtLink
-            :to="link.url"
-            class="relative"
-            active-class="z-[1] after:z-[-1] after:bg-primary after:h-3 after:w-full after:absolute after:top-4 after:left-0"
-          >
-            {{ link.name }}
-          </NuxtLink>
+          <AppLink :url="link.url">{{ link.name }}</AppLink>
         </li>
       </ul>
       <AppButton>
