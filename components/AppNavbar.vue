@@ -29,7 +29,7 @@ const toggleMobileNav = (): void => {
 
 <template>
   <header
-    class="px-3 flex items-center justify-between mx-auto md:px-12 py-6"
+    class="w-full px-3 flex items-center justify-between mx-auto md:px-12 py-6"
   >
     <AppLogo />
     <div class="flex space-x-4">
