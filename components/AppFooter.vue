@@ -21,24 +21,24 @@ const currentYear = ref(new Date().getFullYear());
 </script>
 
 <template>
-  <footer class="border-t-[3px] border-black pt-8 pb-4 px-3 mt-auto">
+  <footer
+    class="border-t-[3px] border-black pt-8 pb-4 px-3 md:px-12 mt-auto"
+  >
     <div class="flex justify-between">
       <AppLogo />
       <nav>
-        <ul class="flex space-x-8 items-center">
+        <ul
+          class="flex flex-col md:flex-row gap-2 md:gap-6 md:items-center"
+        >
           <li v-for="link in links" :key="link.name">
-            <NuxtLink
-              :to="link.url"
-              class="relative"
-              active-class="z-[1] after:z-[-1] after:bg-primary after:h-3 after:w-full after:absolute after:top-4 after:left-0"
-            >
-              {{ link.name }}
-            </NuxtLink>
+            <AppLink :url="link.url" class="after:top-2">{{
+              link.name
+            }}</AppLink>
           </li>
         </ul>
       </nav>
     </div>
-    <span class="grid place-items-center">
+    <span class="grid place-items-center mt-12 md:mt-0">
       ©{{ currentYear }} devdorne. All rights reserved.
     </span>
   </footer>
