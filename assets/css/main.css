@@ -30,7 +30,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: url('./images/memphis-colorful.webp') center center
+  background: url('../images/memphis-colorful.webp') center center
     fixed;
 }
 
@@ -41,7 +41,7 @@ h1 {
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  @apply outline-none focus:shadow-[3px_3px_1px_black];
 }
 
 .card {
