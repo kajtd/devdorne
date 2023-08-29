@@ -25,7 +25,7 @@ const tags = [
   <div
     class="border-[3px] border-black rounded-full p-2 md:px-4 md:py-3 h-8 md:h-12 gap-5 flex justify-between"
   >
-    <span class="md:text-base text-xs">{{
+    <span class="md:text-base text-xs font-medium">{{
       tags[Math.floor(Math.random() * tags.length)]
     }}</span>
     <div
