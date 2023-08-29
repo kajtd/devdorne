@@ -35,7 +35,7 @@ const toggleMobileNav = (): void => {
     <div class="flex space-x-2">
       <AppButton
         v-show="mobileNav"
-        class="!flex !w-10 !h-10 lg:!hidden z-40"
+        class="!flex w-10 h-10 lg:!hidden z-40"
       >
         <Icon icon="akar-icons:search" class="w-4 h-4" />
       </AppButton>
@@ -52,7 +52,7 @@ const toggleMobileNav = (): void => {
           <AppLink :url="link.url">{{ link.name }}</AppLink>
         </li>
       </ul>
-      <AppButton>
+      <AppButton class="w-24 h-24">
         <Icon icon="akar-icons:search" class="w-12 h-12" />
       </AppButton>
     </nav>
