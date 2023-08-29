@@ -22,5 +22,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.4.1"
   }
 }
