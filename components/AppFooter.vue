@@ -22,7 +22,7 @@ const currentYear = ref(new Date().getFullYear());
 
 <template>
   <footer
-    class="border-t-[3px] border-black pt-8 pb-4 px-3 md:px-12 mt-auto"
+    class="border-t-[3px] border-black pt-8 pb-4 px-3 md:px-12 mt-auto bg-white"
   >
     <div class="flex justify-between">
       <AppLogo />
