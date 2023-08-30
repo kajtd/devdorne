@@ -23,6 +23,7 @@ defineProps<{
             v-for="(tag, index) in tags"
             :key="index"
             :text="tag"
+            no-link
           />
         </div>
         <h2 class="font-medium text-3xl md:text-4xl">

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   text: string;
+  noLink?: boolean;
 }>();
 
 const tags = ref<Record<string, string>>({
@@ -13,10 +14,15 @@ const tags = ref<Record<string, string>>({
   Nuxt: 'bg-purple-500',
   Git: 'bg-blue-500',
 });
+
+const computedComponent = computed(() =>
+  props.noLink ? 'div' : resolveComponent('NuxtLink')
+);
 </script>
 
 <template>
-  <NuxtLink
+  <component
+    :is="computedComponent"
     :to="`/tags/${text}`"
     class="border-[3px] border-black rounded-full p-2 md:px-4 md:py-3 h-8 md:h-12 gap-5 flex justify-between"
   >
@@ -27,5 +33,5 @@ const tags = ref<Record<string, string>>({
       class="border-[3px] border-black h-3 w-3 md:h-5 md:w-5 rounded-full"
       :class="tags[text]"
     ></div>
-  </NuxtLink>
+  </component>
 </template>
