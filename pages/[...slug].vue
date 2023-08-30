@@ -19,10 +19,17 @@
             </div>
           </div>
           <img
-            :src="doc.img"
+            :src="`/images/${doc.img}`"
             :alt="doc.alt"
-            class="rounded-lg object-contain w-full mt-12"
+            class="rounded-lg object-contain w-full mt-12 max-h-[512px]"
           />
+          <div class="flex items-center gap-2 mt-4">
+            <ArticleTag
+              v-for="(tag, index) in doc.tags"
+              :key="index"
+              :text="tag"
+            />
+          </div>
         </header>
         <ContentRenderer
           :value="doc"
@@ -63,10 +70,6 @@
 import { Icon } from '@iconify/vue';
 
 const slug = useRoute().params.slug.toString().replace(/,/g, '/');
-
-const { data: article } = await useAsyncData(slug, () => {
-  return queryContent(slug).findOne();
-});
 
 const editLink =
   'https://github.com/kajtd/devdorne/edit/master/content/' +
