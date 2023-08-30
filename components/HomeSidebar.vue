@@ -1,3 +1,10 @@
+<script setup lang="ts">
+defineProps<{
+  tags: string[];
+  totalPosts: number | undefined;
+}>();
+</script>
+
 <template>
   <div class="flex flex-col gap-12">
     <div
@@ -13,17 +20,11 @@
       <div
         class="border-t-[3px] border-black pt-16 px-6 flex flex-wrap gap-3 scroll h-[calc(100%-48px)]"
       >
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
-        <ArticleTag />
+        <ArticleTag
+          v-for="(tag, index) in tags"
+          :key="index"
+          :text="tag"
+        />
       </div>
     </div>
     <div class="border-[3px] border-black rounded-3xl h-64 bg-white">
@@ -37,7 +38,7 @@
       <div
         class="text-7xl font-bold h-full w-full border-t-[3px] border-black grid place-items-center"
       >
-        41
+        {{ totalPosts }}
       </div>
     </div>
   </div>
