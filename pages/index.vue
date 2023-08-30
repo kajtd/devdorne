@@ -9,6 +9,7 @@ const { data } = await useAsyncData('articles', () =>
       '_path',
       'createdAt',
       'img',
+      'alt',
       'excerpt',
       'readingTime',
       'tags',
@@ -19,6 +20,9 @@ const { data } = await useAsyncData('articles', () =>
 const tags = computed(() => [
   ...new Set(data.value?.map((article) => article.tags).flat()),
 ]);
+
+const currentPage = ref(1);
+const perPage = ref(6);
 </script>
 
 <template>
@@ -36,7 +40,10 @@ const tags = computed(() => [
     >
       <div class="flex flex-col gap-5">
         <ArticleCard
-          v-for="article in data"
+          v-for="article in data?.slice(
+            (currentPage - 1) * perPage,
+            (currentPage - 1) * perPage + perPage
+          )"
           :key="article.title"
           :title="article.title"
           :url="article._path"
@@ -45,6 +52,11 @@ const tags = computed(() => [
           :excerpt="article.excerpt"
           :createdAt="article.createdAt"
           :tags="article.tags"
+        />
+        <AppPagination
+          v-model="currentPage"
+          :total-items="data?.length"
+          :per-page="perPage"
         />
       </div>
       <HomeSidebar :tags="tags" :total-posts="data?.length" />
