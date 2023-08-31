@@ -1,7 +1,21 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps<{
+  href?: string;
+}>();
+
+const computedComponent = computed(() =>
+  props.href ? resolveComponent('NuxtLink') : 'button'
+);
+</script>
+
 <template>
-  <button
+  <component
+    :is="computedComponent"
+    :to="href"
     class="flex justify-center items-center bg-primary rounded-full border-[3px] border-black hover:shadow-[3px_3px_1px_black] transition-shadow"
   >
     <slot />
-  </button>
+  </component>
 </template>
