@@ -34,6 +34,10 @@ body {
     fixed;
 }
 
+body.modal {
+  overflow: hidden;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -85,7 +89,7 @@ button:focus-visible {
   }
 
   > h2 {
-    @apply leading-tight text-3xl md:text-4xl mt-3 mb-[18px] relative z-[1] inline-block after:z-[-1] left-0 translate-x-0 after:bg-primary after:h-3 after:w-full after:absolute after:top-9 after:left-0 after:scale-0 hover:after:scale-100 after:transition-transform;
+    @apply leading-tight text-3xl md:text-4xl mt-3 mb-[18px] relative z-[1] inline-block after:z-[-1] left-0 translate-x-0 hover:underline decoration-primary;
 
     > a code {
       @apply bg-slate-100 border-[3px] border-black p-1 px-3 text-3xl rounded-md;
@@ -101,10 +105,14 @@ button:focus-visible {
   }
 
   > ul li {
-    @apply text-lg pl-5 before:w-2 before:h-2 relative before:absolute before:left-0 before:top-2 before:bg-primary before:rounded-full;
+    @apply text-lg pl-5 before:w-[6px] before:h-[6px] relative before:absolute before:left-0 before:top-[10px] before:bg-primary before:rounded-full;
   }
 
   > p code {
     @apply bg-slate-100 border-[3px] border-black p-1 px-3 text-xs rounded-md leading-8;
+  }
+
+  > blockquote {
+    @apply bg-white border-[3px] border-black px-6 py-8 rounded-xl italic font-light leading-8;
   }
 }
