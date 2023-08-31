@@ -41,7 +41,7 @@ const cards = ref<AboutCard[]>([
         class="flex flex-col text-center items-center justify-center font-medium gap-5"
       >
         <h2 class="text-3xl md:text-5xl">Welcome to devdorne</h2>
-        <p class="text-base md:text-xl max-w-sm">
+        <p class="text-base md:text-xl max-w-lg bg-white">
           Our mission is to provide high-quality tutorials and
           resources to help you become a proficient programmer. We
           offer articles ranging from beginner to advanced levels for
