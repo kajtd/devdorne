@@ -12,7 +12,8 @@ const tags = ref<Record<string, string>>({
   UX: 'bg-green-500',
   TypeScript: 'bg-red-500',
   Nuxt: 'bg-purple-500',
-  Git: 'bg-blue-500',
+  Git: 'bg-[#FF5E5E]',
+  Npm: 'bg-[#FFA8EC]',
 });
 
 const computedComponent = computed(() =>
