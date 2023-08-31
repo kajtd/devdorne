@@ -31,9 +31,9 @@ const currentYear = ref(new Date().getFullYear());
           class="flex flex-col md:flex-row gap-2 md:gap-6 md:items-center"
         >
           <li v-for="link in links" :key="link.name">
-            <AppLink :url="link.url" class="after:top-2">{{
-              link.name
-            }}</AppLink>
+            <AppLink :url="link.url" class="after:h-2 after:!top-2">
+              {{ link.name }}
+            </AppLink>
           </li>
         </ul>
       </nav>
