@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto px-6">
+  <section class="mx-auto px-3">
     <div v-if="articles?.length" class="my-10">
       <h1
         class="text-xl sm:text-2xl md:text-4xl font-bold flex items-center justify-center"
@@ -37,24 +37,13 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import Article from './../../types/Article';
+import { useArticlesStore } from '~/store/articles';
+import { storeToRefs } from 'pinia';
+
+const articlesStore = useArticlesStore();
+const { articles } = storeToRefs(articlesStore);
 
 const route = useRoute();
 
 const currentTag = computed(() => route.params.slug[0]);
-
-const { data: articles } = await useAsyncData('articles', () =>
-  queryContent<Article>('articles')
-    .only([
-      'title',
-      '_path',
-      'createdAt',
-      'img',
-      'excerpt',
-      'readingTime',
-      'tags',
-    ])
-    .where({ tags: { $contains: currentTag.value } })
-    .find()
-);
 </script>
