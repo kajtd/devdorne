@@ -26,7 +26,7 @@ const numberOfButtons = computed(() =>
       :key="button"
       class="bg-white w-20 h-20 text-2xl"
       :class="{
-        '!bg-primary shadow-[3px_3px_1px_black]':
+        '!bg-primary shadow-[3px_3px_1px_black] font-semibold':
           modelValue === button,
       }"
       @click="$emit('update:modelValue', button)"
