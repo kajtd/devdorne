@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
 import type Link from './../types/Link';
 import HamburgerMenuButton from './HamburgerMenuButton.vue';
@@ -32,29 +31,22 @@ const toggleMobileNav = (): void => {
     class="w-full px-3 flex items-center justify-between mx-auto md:px-12 py-6"
   >
     <AppLogo />
-    <div class="flex space-x-2">
-      <AppButton
-        v-show="mobileNav"
-        class="!flex w-10 h-10 lg:!hidden z-40"
-      >
-        <Icon icon="akar-icons:search" class="w-4 h-4" />
-      </AppButton>
+    <div class="flex space-x-2 lg:hidden">
+      <SearchInput />
       <HamburgerMenuButton
         :checked="mobileNav"
         @toggle-mobile-nav="toggleMobileNav"
       />
     </div>
     <nav
-      class="hidden bg-white text-2xl lg:flex items-center pl-12 pr-2 space-x-24 justify-between rounded-full border-[3px] border-black h-[120px] py-3"
+      class="hidden bg-white text-2xl lg:flex items-center pl-12 pr-2 justify-between rounded-full border-[3px] border-black h-[120px] py-3"
     >
       <ul class="flex space-x-8 items-center">
         <li v-for="link in links" :key="link.name">
           <AppLink :url="link.url">{{ link.name }}</AppLink>
         </li>
       </ul>
-      <AppButton class="w-24 h-24">
-        <Icon icon="akar-icons:search" class="w-12 h-12" />
-      </AppButton>
+      <SearchInput />
     </nav>
     <Transition name="mobile-nav">
       <nav
