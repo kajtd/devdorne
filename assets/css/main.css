@@ -112,6 +112,10 @@ button:focus-visible {
     @apply bg-slate-100 border-[3px] border-black p-1 px-3 text-xs rounded-md leading-8;
   }
 
+  > p a {
+    @apply text-[rgb(173,86,244)] font-semibold;
+  }
+
   > blockquote {
     @apply bg-white border-[3px] border-black px-6 py-8 rounded-xl italic font-light leading-8;
   }
