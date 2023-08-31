@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { useArticlesStore } from '~/store/articles';
+
 defineProps<{
-  tags: string[];
   totalPosts: number | undefined;
 }>();
+
+const articlesStore = useArticlesStore();
+const { tags } = articlesStore;
 </script>
 
 <template>
@@ -18,6 +22,7 @@ defineProps<{
         </span>
       </div>
       <div
+        v-if="tags.length"
         class="border-t-[3px] border-black pt-16 px-6 flex flex-wrap gap-3 scroll h-[calc(100%-48px)]"
       >
         <ArticleTag

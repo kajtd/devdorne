@@ -1,25 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import Article from '@/types/Article';
+import { useArticlesStore } from '~/store/articles';
+import { storeToRefs } from 'pinia';
 
-const { data } = await useAsyncData('articles', () =>
-  queryContent<Article>('articles')
-    .only([
-      'title',
-      '_path',
-      'createdAt',
-      'img',
-      'alt',
-      'excerpt',
-      'readingTime',
-      'tags',
-    ])
-    .find()
-);
-
-const tags = computed(() => [
-  ...new Set(data.value?.map((article) => article.tags).flat()),
-]);
+const articlesStore = useArticlesStore();
+const { tags } = articlesStore;
+const { articles } = storeToRefs(articlesStore);
 
 const currentPage = ref(1);
 const perPage = ref(6);
@@ -40,7 +25,7 @@ const perPage = ref(6);
     >
       <div class="flex flex-col gap-5">
         <ArticleCard
-          v-for="article in data?.slice(
+          v-for="article in articles?.slice(
             (currentPage - 1) * perPage,
             (currentPage - 1) * perPage + perPage
           )"
@@ -55,11 +40,11 @@ const perPage = ref(6);
         />
         <AppPagination
           v-model="currentPage"
-          :total-items="data?.length"
+          :total-items="articles?.length"
           :per-page="perPage"
         />
       </div>
-      <HomeSidebar :tags="tags" :total-posts="data?.length" />
+      <HomeSidebar :tags="tags" :total-posts="articles?.length" />
     </section>
   </main>
 </template>
