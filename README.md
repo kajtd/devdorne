@@ -1,63 +1,49 @@
-# Nuxt 3 Minimal Starter
+# devdorne
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to devdorne. Our mission is to provide quality articles ranging from beginner to advanced levels to help you become a better programmer.
 
-## Setup
+![Website gif](./screencapture.png)
 
-Make sure to install the dependencies:
+## Tech Stack
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
+```js
+- Nuxt: 3.7.0
+- Nuxt Content: 2.7.2
+- Typescript: 5.1.6
+- TailwindCSS: 3.3.3
+- Pinia: 2.1.6
 ```
 
-## Development Server
 
-Start the development server on `http://localhost:3000`:
 
-```bash
-# npm
-npm run dev
+## Run Locally
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-```
-
-## Production
-
-Build the application for production:
+Clone the project
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+  git clone git@github.com:kajtd/devdorne.git
 ```
 
-Locally preview production build:
+Go to the project directory
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+  cd devdorne
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+## License
+
+[MIT](./LICENSE.txt)
+
