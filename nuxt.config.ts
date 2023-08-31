@@ -14,6 +14,14 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   app: {
     head: {
+      title: 'devdorne.',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Welcome to devdorne. Our mission is to provide quality articles ranging from beginner to advanced levels to help you become a better programmer.',
+        },
+      ],
       script: [
         {
           src: 'https://cdn-cookieyes.com/client_data/23a0da77ccd3cf3e754f677c/script.js',
