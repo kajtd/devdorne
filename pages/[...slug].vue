@@ -1,7 +1,7 @@
 <template>
   <main class="mt-24 mb-12 px-3 md:px-12">
     <article
-      class="max-w-4xl border-[3px] border-black bg-white rounded-3xl p-4 xl:p-12 mx-auto w-full flex flex-col justify-center items-center"
+      class="max-w-4xl border-[3px] border-black bg-white rounded-3xl p-4 md:p-8 xl:p-12 mx-auto w-full flex flex-col justify-center items-center"
     >
       <ContentDoc v-slot="{ doc }">
         <header class="w-full !max-w-none mb-16">
@@ -14,7 +14,7 @@
                 {{ doc.readingTime }} min time
               </span>
               <span class="font-semibold">
-                {{ doc.createdAt }}
+                {{ formatDate(doc.createdAt) }}
               </span>
             </div>
           </div>
@@ -36,11 +36,12 @@
           class="w-full article-content"
         />
         <footer
-          class="mt-8 xl:mt-24 w-full border-t-[3px] border-black"
+          class="mb-3 mt-8 xl:mt-24 w-full border-t-[3px] border-black"
         >
           <div class="flex items-center justify-end pt-5">
             <AppButton
               :href="editLink"
+              target="_blank"
               class="flex !no-underline h-12 px-5 gap-6"
             >
               <span class="font-semibold pt-[4px]">
@@ -56,9 +57,9 @@
           </p>
           <p>
             Remember that you may always edit this page on
-            <span class="font-semibold">Github</span>, in case you
-            find any mistakes. Also, feel free to contact me if you
-            have any questions or suggestions.
+            <span class="font-semibold">GitHub</span> in case you find
+            any mistakes. Also, feel free to contact me if you have
+            any questions or suggestions.
           </p>
         </footer>
       </ContentDoc>
@@ -68,6 +69,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
+import { formatDate } from '~/utils/methods';
 
 const slug = useRoute().params.slug.toString().replace(/,/g, '/');
 
