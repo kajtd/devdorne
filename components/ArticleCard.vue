@@ -1,13 +1,18 @@
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue';
+import { formatDate } from '~/utils/methods';
+
+const props = defineProps<{
   title: string;
-  url: string;
-  excerpt: string;
+  tags: string[];
+  url?: string;
+  excerpt: unknown;
   createdAt: string;
   alt: string;
   img: string;
-  tags: string[];
 }>();
+
+const formattedDate = computed(() => formatDate(props.createdAt));
 </script>
 
 <template>
@@ -18,7 +23,7 @@ defineProps<{
       <div
         class="flex flex-col justify-between md:pl-5 pt-5 pb-2 md:mr-10 gap-5 md:gap-8"
       >
-        <div class="flex items-center gap-2">
+        <div v-if="tags.length" class="flex items-center gap-2">
           <ArticleTag
             v-for="(tag, index) in tags"
             :key="index"
@@ -35,7 +40,9 @@ defineProps<{
         <div
           class="flex items-center justify-between text-sm md:text-base"
         >
-          <span class="font-medium">{{ createdAt }}</span>
+          <span class="font-medium">
+            {{ formattedDate }}
+          </span>
           <div class="flex gap-1 md:gap-3 items-center">
             <img
               src="https://www.kajetandomagala.com/content/images/size/w300/2023/04/kajetan_avatar2.jpg"
