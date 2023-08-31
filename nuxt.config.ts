@@ -14,6 +14,13 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   app: {
     head: {
+      script: [
+        {
+          src: 'https://cdn-cookieyes.com/client_data/23a0da77ccd3cf3e754f677c/script.js',
+          id: 'cookieyes',
+          type: 'text/javascript',
+        },
+      ],
       link: [
         {
           rel: 'preconnect',
