@@ -40,7 +40,7 @@
           <li
             v-for="article of filteredArticles"
             :key="article._id"
-            class="w-full pt-6 cursor-pointer text-lg md:text-4xl font-semibold transition-colors flex justify-between items-center px-8"
+            class="w-full pt-6 cursor-pointer text-lg md:text-4xl font-semibold transition-colors flex justify-between items-center px-8 [&>button]:text-left"
           >
             <AppButton
               class="after:top-6 after:hidden lg:after:block hover:underline focus:!shadow-none focus:underline decoration-primary bg-white border-none hover:shadow-none"
