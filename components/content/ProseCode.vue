@@ -2,26 +2,16 @@
 import { Icon } from '@iconify/vue';
 import { useClipboard } from '@vueuse/core';
 
-defineProps({
-  code: {
-    type: String,
-    default: '',
-  },
-  language: {
-    type: String,
-    default: null,
-  },
-  filename: {
-    type: String,
-    default: null,
-  },
-  highlights: {
-    type: Array as () => number[],
-    default: () => [],
-  },
-});
+defineProps<{
+  code: string;
+  language?: string;
+  filename?: string;
+  highlights?: number[];
+}>();
 
 const { copy, copied } = useClipboard();
+
+const colors = ['bg-red-500', 'bg-yellow-500', 'bg-green-500'];
 </script>
 
 <template>
@@ -33,17 +23,15 @@ const { copy, copied } = useClipboard();
     >
       <div class="flex items-center gap-1 mr-auto flex-1">
         <div
-          class="shadow-xl bg-red-500 w-[0.8rem] h-[0.8rem] rounded-full"
-        ></div>
-        <div
-          class="shadow-xl bg-yellow-500 w-[0.8rem] h-[0.8rem] rounded-full"
-        ></div>
-        <div
-          class="shadow-xl bg-green-500 w-[0.8rem] h-[0.8rem] rounded-full"
+          v-for="color in colors"
+          :key="color"
+          class="shadow-xl w-4 h-4 rounded-full border-[3px] border-black"
+          :class="color"
         ></div>
       </div>
       <span
-        class="text-sm text-black font-medium flex-1 flex justify-center"
+        v-if="filename"
+        class="text-sm text-black border-[3px] border-black bg-white font-medium px-8 py-2 rounded-xl mr-4 flex justify-center"
       >
         {{ filename }}
       </span>
@@ -64,18 +52,9 @@ const { copy, copied } = useClipboard();
   @apply my-0 flex flex-1 overflow-x-auto p-4 leading-[1.625];
   counter-reset: lines;
 }
-:slotted(pre code) {
-  @apply flex flex-col w-full;
-}
-:slotted(pre code .line) {
-  @apply inline-table min-h-[1rem];
-}
-:slotted(pre code .line::before) {
+:slotted(pre code p::before) {
   counter-increment: lines;
   content: counter(lines);
   @apply w-4 mr-6 inline-block text-left text-black;
-}
-:slotted(pre code .highlight) {
-  @apply bg-red-500 block mr-[-1em] ml-[-1em] pr-[1em] pl-[0.75em] border-l-4 border-black;
 }
 </style>
