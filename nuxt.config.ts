@@ -15,6 +15,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'devdorne.',
+      htmlAttrs: {
+        lang: 'en',
+      },
       meta: [
         {
           name: 'description',
