@@ -2,6 +2,7 @@
   <div>
     <AppButton
       class="lg:w-24 lg:h-24 lg:ml-24 !flex w-10 h-10 z-40 lg:z-auto"
+      ariaLabel="Search"
       @click="toggleSearchBar"
     >
       <Icon
@@ -16,6 +17,7 @@
       >
         <AppButton
           class="w-10 h-10 lg:w-24 lg:h-24 ml-24 top-4 right-4 absolute"
+          ariaLabel="Close"
           @click="toggleSearchBar"
         >
           <Icon
