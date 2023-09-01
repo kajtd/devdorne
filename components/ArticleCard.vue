@@ -55,7 +55,7 @@ const formattedDate = computed(() => formatDate(props.createdAt));
       </div>
       <img
         :src="`/images/${img}`"
-        class="h-full max-h-[500px] rounded-3xl w-full"
+        class="h-full max-h-[500px] rounded-3xl w-full object-contain"
         :alt="alt"
       />
     </article>
