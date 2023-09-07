@@ -18,6 +18,10 @@ const cards = ref<AboutCard[]>([
     description: `The journey of a thousand lines of code begins with a single keystroke. At devdorne, we're committed to making that journey as enriching as possible. From foundational articles for beginners to complex tutorials for seasoned pros, our content will equip you with the skills you need to excel in the programming world.`,
   },
 ]);
+
+useHead({
+  title: 'devdorne.',
+});
 </script>
 
 <template>

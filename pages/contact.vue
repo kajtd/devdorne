@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: 'devdorne.',
+});
+</script>
+
 <template>
   <main class="flex-1 px-3 md:px-12 w-full max-w-7xl mx-auto">
     <section

@@ -8,6 +8,10 @@ const { articles } = storeToRefs(articlesStore);
 
 const currentPage = ref(1);
 const perPage = ref(6);
+
+useHead({
+  title: 'devdorne.',
+});
 </script>
 
 <template>
