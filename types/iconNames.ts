@@ -1,4 +1,5 @@
 export type IconName =
+  | "collage-fill"
   | "line-chart-fill"
   | "add-line"
   | "settings"
