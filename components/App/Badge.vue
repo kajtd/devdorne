@@ -1,6 +1,6 @@
 <template>
   <div :class="badgeClasses">
-    <div v-if="innerText" class="bg-white rounded-full font-medium text-sm px-2 my-1 mr-2">
+    <div v-if="innerText" class="bg-[#1F2228] text-white rounded-full font-medium text-sm px-2 my-1 mr-2">
       {{ innerText }}
     </div>
     <slot></slot>
@@ -28,7 +28,7 @@ const badgeClasses = computed(() => {
   return [
     "flex py-1 px-3 h-7 items-center justify-center text-sm border-[1.25px] rounded-full font-medium",
     {
-      "bg-[#E3EAFD] text-[#133A9A] border-gray-900/10": props.blue,
+      "bg-[#3368F04D] text-white border-[#ffffff24]": props.blue,
       "bg-[#ECDFFB] text-[#5314A3] border-0": props.purple,
       "bg-[#E3F9E5] text-[#137A1A] border-green-900/10": props.green,
       "bg-[#F9F8E3] text-[#9A8A13] border-yellow-900/10": props.yellow,

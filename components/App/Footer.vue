@@ -6,28 +6,28 @@
     <div class="mx-auto max-w-xl pt-12">
       <NuxtLink to="/">
         <img src="/logo.svg" alt=""
-          class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-primary-200 rounded-full hover:scale-125" />
+          class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-primary-500 rounded-full hover:scale-125" />
       </NuxtLink>
       <div class="flex items-center justify-between">
         <div>
-          <p class="text-sm text-gray-600/90 font-medium mb-2 mt-12">Links</p>
-          <ul class="flex flex-col space-y-2 text-black text-sm font-medium">
+          <p class="text-sm text-gray-100/90 font-medium mb-2 mt-12">Links</p>
+          <ul class="flex flex-col space-y-2 text-white text-sm font-medium">
             <li v-for="link in links" :key="link._path"
               class="transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
               <NuxtLink :to="link._path"
-                class="relative hover:text-primary-400 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
+                class="relative hover:text-primary-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
                 {{ link.name }}
               </NuxtLink>
             </li>
           </ul>
         </div>
         <div>
-          <p class="text-sm text-gray-600/90 font-medium mb-2 mt-12">Legal</p>
-          <ul class="flex flex-col space-y-2 text-black text-sm font-medium">
+          <p class="text-sm text-gray-100/90 font-medium mb-2 mt-12">Legal</p>
+          <ul class="flex flex-col space-y-2 text-white text-sm font-medium">
             <li v-for="link in legalLinks" :key="link._path"
               class="transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
               <NuxtLink :to="link._path"
-                class="relative hover:text-primary-400 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
+                class="relative hover:text-primary-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
                 {{ link.name }}
               </NuxtLink>
             </li>
@@ -46,7 +46,7 @@
         <!-- <Icon name="prime:twitter" class="w-4 h-4 text-gray-500/80"></Icon> -->
       </a>
     </div>
-    <p class="mt-6 text-sm text-gray-600/70 mx-auto max-w-xl">
+    <p class="mt-6 text-sm text-gray-100/70 mx-auto max-w-xl">
       © {{ currentYear }} writer.ai All rights reserved.
     </p>
   </footer>

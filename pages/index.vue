@@ -1,9 +1,7 @@
 <template>
-  <main class="min-h-screen flex flex-col items-center">
-    <div class="space-y-8 flex flex-col items-center px-4">
+  <main class="min-h-screen flex flex-col items-center w-full">
+    <div class="space-y-8 flex flex-col items-center px-4 w-full">
       <HomeIntro />
-      <HomeAbout />
-      <HomeFAQ />
       <HomeCTA />
     </div>
   </main>

@@ -28,7 +28,7 @@ const component = computed(() => {
     'relative rounded-[10px] flex items-center justify-center cursor-pointer gap-2 overflow-hidden transition-all duration-200 text-sm font-medium px-3 h-8 ring-offset-background hover:ring-2 hover:ring-primary-300 text-white',
     {
       'bg-[#18181B]': !secondary && !tertiary && !ghost,
-      'bg-white !text-black border border-gray-300/80 shadow-sm': secondary,
+      'bg-white !text-black border shadow-sm': secondary,
       'bg-[#0A0F290A] !text-black': tertiary,
       'bg-transparent !text-gray-600/90': ghost,
     },
