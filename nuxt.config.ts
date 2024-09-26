@@ -45,4 +45,9 @@ export default defineNuxtConfig({
   vite: {
     plugins: [svgLoader({})],
   },
+  runtimeConfig: {
+    public: {
+      emailUser: process.env.EMAIL_USER,
+    },
+  },
 });
