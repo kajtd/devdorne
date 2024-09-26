@@ -19,7 +19,7 @@
         </li>
         <li class="flex-1"></li>
         <li class="ml-3 hidden sm:block">
-          <AppButton to="signup" secondary> Submit a tool</AppButton>
+          <AppButton to="/submit-tool" secondary>Submit a Tool</AppButton>
         </li>
       </ul>
     </nav>

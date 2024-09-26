@@ -5,7 +5,7 @@
 
     <div class="mx-auto max-w-xl pt-12">
       <NuxtLink to="/">
-        <img src="/logo.svg" alt=""
+        <img alt=""
           class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-primary-500 rounded-full hover:scale-125" />
       </NuxtLink>
       <div class="flex items-center justify-between">
