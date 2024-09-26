@@ -4,7 +4,7 @@
       <ul class="flex items-center py-2 px-3 text-sm font-medium text-gray-600/90">
         <li>
           <NuxtLink to="/">
-            <img src="~/public/devdorne.svg" alt="devdorne"
+            <img src="" alt="devdorne"
               class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-primary-500 rounded-full hover:scale-125" />
           </NuxtLink>
         </li>
