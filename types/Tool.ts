@@ -8,4 +8,6 @@ export interface Tool extends ParsedContent {
   pricing?: string;
   rating: number;
   slug: string;
+  compatibility: string[];
+  lastUpdated: string;
 }
