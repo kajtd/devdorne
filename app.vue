@@ -3,7 +3,30 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <AppSearchOverlay :is-open="showSearchOverlay" @close="showSearchOverlay = false"
+    @select="showSearchOverlay = false" />
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const showSearchOverlay = ref(false);
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeyDown);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyDown);
+});
+
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (event.key === '/' && !event.ctrlKey && !event.metaKey) {
+    event.preventDefault();
+    showSearchOverlay.value = true;
+  }
+};
+</script>
 
 <style>
 .page-enter-active,

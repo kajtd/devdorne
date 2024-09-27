@@ -50,18 +50,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, h, computed } from 'vue'
-import type { ParsedContent } from '@nuxt/content'
-
-interface Tool extends ParsedContent {
-  title: string
-  tags: string[]
-  website?: string
-  features: string[]
-  pricing?: string
-  rating: number
-  slug: string
-}
+import type { Tool } from '@/types/Tool'
 
 const route = useRoute()
 const { data: tool } = await useAsyncData<Tool | null>(`tool-${route.params.slug}`, () =>

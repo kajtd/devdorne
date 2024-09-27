@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 type Props = {
   modelValue: string;
   secondary?: boolean;
@@ -10,11 +11,15 @@ type Props = {
   buttonType?: "submit" | "button" | "reset";
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   type: 'text'
 })
 
 const emits = defineEmits(["button-click", "update:modelValue"]);
+
+const inputRef = ref<HTMLInputElement | null>(null);
+
+const attrs = useAttrs();
 
 const onButtonClick = () => {
   emits("button-click");
@@ -23,11 +28,13 @@ const onButtonClick = () => {
 const updateValue = (value: string) => {
   emits("update:modelValue", value);
 };
+
+defineExpose({ focus: () => inputRef.value?.focus() });
 </script>
 
 <template>
-  <div class="flex items-center ">
-    <input :value="modelValue" :placeholder="placeholder" :type="type" :pattern="pattern"
+  <div class="flex items-center">
+    <input ref="inputRef" :value="modelValue" :placeholder="placeholder" :type="type" :pattern="pattern" v-bind="attrs"
       @input="updateValue(($event.target as HTMLInputElement).value)" :class="[
       'text-sm px-3 h-8 rounded-l-[10px] shadow-sm border flex-1 transition text-white bg-black',
       {
