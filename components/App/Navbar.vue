@@ -20,7 +20,7 @@
           </ul>
         </li>
         <li class="transition duration-200 hover:scale-105 hover:-translate-y-[2px] hidden sm:block">
-          <NuxtLink to="how-we-test" class="relative px-2 text-blue-400 flex items-center">
+          <NuxtLink to="/how-we-test" class="relative px-2 text-blue-400 flex items-center">
             <AppIcon name="collage-fill" class="w-4 h-4 mr-2 " />
             <span>How We Test</span>
           </NuxtLink>
