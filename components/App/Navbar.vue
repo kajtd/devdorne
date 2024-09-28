@@ -9,12 +9,12 @@
           </NuxtLink>
         </li>
         <li class="ml-8 mr-6 relative">
-          <AppInput v-model="searchQuery" name="search" placeholder="Search tools" class="min-w-80"
-            @input="searchTools" />
+          <AppInput v-model="searchQuery" name="search" placeholder="Search..." class="min-w-80"
+            @input="openSearchOverlay" :badge="true" :badgeChar="'/'" />
           <ul v-if="filteredTools.length > 0"
             class="absolute z-10 w-full mt-1 bg-black border border-gray-700 rounded-md shadow-lg">
             <li v-for="tool in filteredTools" :key="tool.slug" @click="selectTool(tool)"
-              class="px-4 py-2 hover:bg-gray-800 cursor-pointer">
+              class="px-4 py-2 hover:bg-gray-800 cursor-pointer text-white">
               {{ tool.title }}
             </li>
           </ul>
@@ -38,6 +38,7 @@
 import type { Tool } from '@/types/Tool';
 
 const searchQuery = ref('');
+
 const filteredTools = ref<Tool[]>([]);
 
 const { data: tools } = await useAsyncData<Tool[]>('tools', () => queryContent<Tool>('tools').find());
@@ -59,22 +60,9 @@ const selectTool = (tool: Tool) => {
 };
 
 watch(searchQuery, searchTools);
-
-// Global search overlay
 const showSearchOverlay = ref(false);
 
-onMounted(() => {
-  window.addEventListener('keydown', handleKeyDown);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeyDown);
-});
-
-const handleKeyDown = (event: KeyboardEvent) => {
-  if (event.key === '/' && !event.ctrlKey && !event.metaKey) {
-    event.preventDefault();
-    showSearchOverlay.value = true;
-  }
+const openSearchOverlay = () => {
+  showSearchOverlay.value = true;
 };
 </script>
