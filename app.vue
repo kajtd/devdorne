@@ -24,6 +24,8 @@ const handleKeyDown = (event: KeyboardEvent) => {
   if (event.key === '/' && !event.ctrlKey && !event.metaKey) {
     event.preventDefault();
     showSearchOverlay.value = true;
+  } else if (event.key === 'Escape') {
+    showSearchOverlay.value = false;
   }
 };
 </script>
