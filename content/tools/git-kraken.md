@@ -5,6 +5,7 @@ website: https://www.gitkraken.com/
 github: https://github.com/gitkraken/vscode-gitlens
 category: Version Control
 tags: [Git, GUI, Productivity]
+createdAt: 2024-07-21
 slug: gitkraken
 ---
 

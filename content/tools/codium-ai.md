@@ -6,6 +6,7 @@ github: https://github.com/Codium-ai/pr-agent
 category: AI Assistant
 tags: [AI, Code Understanding, Testing]
 rating: 4.5
+createdAt: 2024-09-11
 slug: codium-ai
 ---
 

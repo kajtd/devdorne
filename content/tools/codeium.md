@@ -6,6 +6,7 @@ github: https://github.com/Exafunction/codeium
 category: AI Assistant
 tags: [AI, Code Completion, Free]
 rating: 4.5
+createdAt: 2024-08-01
 slug: codeium
 ---
 

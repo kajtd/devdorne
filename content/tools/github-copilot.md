@@ -10,6 +10,7 @@ slug: github-copilot
 compatibility: [VS Code, Visual Studio, JetBrains IDEs, Neovim]
 pricing: $10/month or $100/year for individuals, free for students and open source maintainers
 lastUpdated: 2023-07-15
+createdAt: 2024-09-21
 features:
   - AI-powered code suggestions
   - Multi-language support

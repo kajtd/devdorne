@@ -6,6 +6,7 @@ github: https://github.com/getcursor/cursor
 category: IDE
 tags: [AI, Code Editor, Productivity]
 slug: cursor
+createdAt: 2024-08-22
 ---
 
 # Cursor: The AI-First Code Editor

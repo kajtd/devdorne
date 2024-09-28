@@ -5,6 +5,7 @@ website: https://www.tabnine.com/
 github: https://github.com/codota/tabnine-vscode
 category: AI Assistant
 tags: [AI, Code Completion, Productivity]
+createdAt: 2024-09-28
 slug: tabnine
 ---
 
