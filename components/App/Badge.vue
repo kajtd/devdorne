@@ -26,14 +26,13 @@ const props = defineProps<BadgeProps>();
 
 const badgeClasses = computed(() => {
   return [
-    "flex py-1 px-3 h-7 items-center justify-center text-sm border-[1.25px] rounded-full font-medium",
+    "flex py-1 px-3 h-7 items-center justify-center text-sm border-[1.25px] border-[#ffffff24] rounded-full font-medium",
     {
-      "bg-[#3368F04D] text-white border-[#ffffff24]": props.blue,
-      "bg-[#ECDFFB] text-[#5314A3] border-0": props.purple,
-      "bg-[#E3F9E5] text-[#137A1A] border-green-900/10": props.green,
-      "bg-[#F9F8E3] text-[#9A8A13] border-yellow-900/10": props.yellow,
-      "bg-[#F9E3E3] text-[#9A1313] border-red-900/10": props.red,
-      "bg-[#F3E3F9] text-[#8A139A] border-pink-900/10": props.pink,
+      "bg-[#3368F04D]": props.blue,
+      "bg-[#873DE64D]": props.purple,
+      "bg-[#26BD6C4D]": props.green,
+      "bg-[#F48E2F40]": props.yellow,
+      "bg-[#E6483D4D]": props.red,
     },
   ];
 });
