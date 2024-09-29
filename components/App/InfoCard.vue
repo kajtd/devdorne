@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+    <div class="bg-black/70 rounded-lg shadow-lg p-6">
         <h2 class="text-2xl font-semibold mb-4 text-white">{{ title }}</h2>
         <slot>
             <p class="text-gray-300">{{ content }}</p>
