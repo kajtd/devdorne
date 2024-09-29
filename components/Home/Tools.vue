@@ -1,18 +1,20 @@
 <template>
-    <div class="mx-auto px-4 py-8 flex items-center justify-center max-w-7xl">
+    <div class="mx-auto px-4 py-8 flex flex-col items-center justify-center max-w-7xl">
+        <h2 class="text-3xl font-bold mb-8 text-white">Tools</h2>
         <!-- Tags column -->
-        <div class="w-full md:w-1/4 mb-4 md:mb-0">
-            <h2 class="text-2xl font-bold mb-4">Tags</h2>
-            <div class="space-y-2">
-                <AppButton v-for="tag in tags" :key="tag" :class="{ 'bg-primary-500': selectedTag === tag }"
-                    @click="selectTag(tag)">
+        <div class="w-full mb-8">
+            <div class="flex flex-wrap gap-2 justify-center">
+                <AppButton v-for="tag in tags" :key="tag" :class="[
+                    'px-4 py-2 rounded-full text-sm',
+                    selectedTag === tag ? 'bg-white text-black' : 'bg-[#2c2c2e] text-white'
+                ]" @click="selectTag(tag)">
                     {{ tag }}
                 </AppButton>
             </div>
         </div>
 
         <!-- Tool cards -->
-        <div class="w-full md:w-3/4 md:pl-8">
+        <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <AppToolCard v-for="tool in filteredTools" :key="tool.slug" :tool="tool" />
             </div>
