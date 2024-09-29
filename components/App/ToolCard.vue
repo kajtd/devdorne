@@ -4,17 +4,16 @@
             <h3 class="text-xl font-semibold mb-2">{{ tool.title }}</h3>
             <p class="text-gray-400 mb-4">{{ tool.description }}</p>
             <div class="flex flex-wrap gap-2">
-                <AppBadge v-for="tag in tool.tags" :key="tag">{{ tag }}</AppBadge>
+                <AppBadge v-for="tag in tool.tags" :key="tag" blue>{{ tag }}</AppBadge>
             </div>
         </div>
     </NuxtLink>
 </template>
 
 <script setup lang="ts">
-defineProps({
-    tool: {
-        type: Object,
-        required: true
-    }
-})
+import type { Tool } from '@/types/Tool';
+
+defineProps<{
+    tool: Tool;
+}>();
 </script>
