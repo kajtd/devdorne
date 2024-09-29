@@ -1,28 +1,40 @@
 <template>
-    <div class="container mx-auto px-4 py-8 max-w-2xl">
-        <h1 class="text-3xl font-bold mb-6">Submit a Tool</h1>
-        <form class="space-y-4" @submit.prevent="submitTool">
-            <div>
-                <label for="toolName" class="block text-sm font-medium text-gray-100">Tool Name</label>
-                <AppInput v-model="toolName" id="toolName" placeholder="Enter tool name" required />
+    <main class="flex flex-col items-center py-12">
+        <div class="space-y-8 flex flex-col items-center p-6 w-full max-w-3xl">
+            <div class="bg-black rounded-xl shadow-xs border border-white/15 min-h-96 w-full p-6 flex flex-col gap-2">
+                <h1 class="text-2xl font-semibold text-white">Submit a Tool</h1>
+                <p class="text-gray-400/90 max-w-sm">
+                    Help us grow our collection of developer tools.
+                </p>
+                <p class="text-gray-400/90">
+                    We encourage you to submit tools that you find valuable or have created yourself. By sharing these
+                    resources, you're helping other developers discover new and useful tools that can enhance their
+                    workflow and productivity.
+                </p>
+                <form @submit.prevent="submitTool" class="flex flex-col gap-4 mt-6">
+                    <AppInput v-model="toolName" placeholder="Tool Name" required />
+                    <AppInput v-model="toolWebsite" placeholder="https://example.com" type="url" />
+                    <textarea v-model="description" placeholder="Description and Reason for Submitting" rows="4"
+                        class="mt-1 block w-full text-sm text-white rounded-[10px] bg-black p-2 border border-gray-600/90 shadow-sm focus:border-blue-500 focus:ring-blue-500 "
+                        required></textarea>
+                    <AppButton type="submit" secondary :disabled="isSubmitting">
+                        {{ isSubmitting ? 'Submitting...' : 'Submit Tool' }}
+                    </AppButton>
+                </form>
+                <div class="text-center h-4 mt-6 border-t border-gray-700/70">
+                    <p
+                        class="text-xs font-medium text-center relative -top-[17px] p-2 inline-block text-gray-200/80 bg-black">
+                        Thank you for contributing
+                    </p>
+                </div>
+                <p class="text-sm text-gray-400/90 mt-4">
+                    Want to explore our tools?
+                    <NuxtLink to="/" class="font-medium text-blue-400">Browse Tools</NuxtLink>
+                </p>
             </div>
-            <div>
-                <label for="toolWebsite" class="block text-sm font-medium text-gray-100">Tool Website (optional)</label>
-                <AppInput v-model="toolWebsite" id="toolWebsite" placeholder="https://example.com" type="url" />
-            </div>
-            <div>
-                <label for="description" class="block text-sm font-medium text-gray-100">Description and Reason for
-                    Submitting</label>
-                <textarea v-model="description" id="description" rows="4"
-                    class="mt-1 block w-full rounded-md bg-black border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                    required></textarea>
-            </div>
-            <AppButton type="submit" secondary :disabled="isSubmitting">
-                {{ isSubmitting ? 'Submitting...' : 'Submit Tool' }}
-            </AppButton>
-        </form>
+        </div>
         <AppAlert v-if="alert.show" :type="alert.type" :title="alert.title" :description="alert.description" />
-    </div>
+    </main>
 </template>
 
 <script setup lang="ts">
@@ -33,7 +45,6 @@ const isSubmitting = ref(false);
 const alert = ref({ show: false, type: '', title: '', description: '' });
 
 const submitTool = async () => {
-    console.log('Submitting tool...');
     isSubmitting.value = true;
     try {
         await $fetch('/api/submit-tool', {
