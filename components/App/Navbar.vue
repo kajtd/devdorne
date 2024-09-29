@@ -4,8 +4,8 @@
       <ul class="flex items-center py-2 px-3 text-sm font-medium text-gray-600/90">
         <li>
           <NuxtLink to="/">
-            <img src="" alt="devdorne"
-              class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-primary-500 rounded-full hover:scale-125" />
+            <img src="/logo.svg" alt="devdorne"
+              class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-blue-500 rounded-md hover:scale-110" />
           </NuxtLink>
         </li>
         <li class="ml-8 mr-6 relative">

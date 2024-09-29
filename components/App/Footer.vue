@@ -5,8 +5,8 @@
 
     <div class="mx-auto max-w-xl pt-12">
       <NuxtLink to="/">
-        <img alt=""
-          class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-primary-500 rounded-full hover:scale-125" />
+        <img src="/logo.svg" alt="devdorne"
+          class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-blue-500 rounded-md hover:scale-110" />
       </NuxtLink>
       <div class="flex items-center justify-between">
         <div>
@@ -15,7 +15,7 @@
             <li v-for="link in links" :key="link._path"
               class="transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
               <NuxtLink :to="link._path"
-                class="relative hover:text-primary-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
+                class="relative hover:text-blue-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
                 {{ link.name }}
               </NuxtLink>
             </li>
@@ -27,7 +27,7 @@
             <li v-for="link in legalLinks" :key="link._path"
               class="transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
               <NuxtLink :to="link._path"
-                class="relative hover:text-primary-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
+                class="relative hover:text-blue-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
                 {{ link.name }}
               </NuxtLink>
             </li>
@@ -47,7 +47,7 @@
       </a>
     </div>
     <p class="mt-6 text-sm text-gray-100/70 mx-auto max-w-xl">
-      © {{ currentYear }} writer.ai All rights reserved.
+      © {{ currentYear }} devdorne All rights reserved.
     </p>
   </footer>
 </template>

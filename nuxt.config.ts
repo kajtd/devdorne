@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         lang: "en",
         class: "h-full",
       },
-      // link: [{ rel: "icon", type: "image/png", href: "/logo.svg" }],
+      link: [{ rel: "icon", type: "image/png", href: "/logo.svg" }],
       bodyAttrs: {
         class: "antialiased bg-[#14151a] min-h-screen",
       },
