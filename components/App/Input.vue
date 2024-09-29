@@ -41,7 +41,7 @@ defineExpose({ focus: () => inputRef.value?.focus() });
       @input="updateValue(($event.target as HTMLInputElement).value)" :class="[
       'text-sm px-3 h-8 rounded-[10px] shadow-sm border flex-1 transition text-white bg-black',
       {
-        'border-gray-600/90 outline-none ring-offset focus:ring-2 focus:ring-primary-500 focus:z-10 placeholder:font-normal':
+        'border-gray-600/90 outline-none ring-offset focus:ring-2 focus:ring-blue-500 focus:z-10 placeholder:font-normal':
           !secondary && !tertiary,
         'pr-8': badge,
       },
@@ -53,7 +53,7 @@ defineExpose({ focus: () => inputRef.value?.focus() });
     <button v-if="buttonText" :class="[
       'text-sm px-3 h-8 rounded-r-[10px] shadow-sm border border-l-0 font-medium transition',
       {
-        'border-gray-700/80 text-white outline-none ring-offset hover:ring-2 hover:ring-primary-500 focus:z-10':
+        'border-gray-700/80 text-white outline-none ring-offset hover:ring-2 hover:ring-blue-500 focus:z-10':
           !secondary && !tertiary,
       },
     ]" :type="buttonType" @click="onButtonClick">

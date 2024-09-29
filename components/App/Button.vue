@@ -25,7 +25,7 @@ const component = computed(() => {
 
 <template>
   <component :is="component" :to="to || ''" :disabled="disabled" :type="type || 'button'" :class="[
-    'relative rounded-[10px] flex items-center justify-center cursor-pointer gap-2 overflow-hidden transition-all duration-200 text-sm font-medium px-3 h-8 ring-offset-background hover:ring-2 hover:ring-primary-300 text-white',
+    'relative rounded-[10px] flex items-center justify-center cursor-pointer gap-2 overflow-hidden transition-all duration-200 text-sm font-medium px-3 h-8 ring-offset-background hover:ring-2 hover:ring-blue-500 text-white',
     {
       'bg-[#18181B]': !secondary && !tertiary && !ghost,
       'bg-white !text-black border shadow-sm': secondary,
