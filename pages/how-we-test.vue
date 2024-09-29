@@ -40,13 +40,13 @@
                 </p>
             </section>
 
-            <section class="bg-gray-800 rounded-lg p-6">
+            <section class="bg-black/70 rounded-lg p-6">
                 <h2 class="text-2xl font-semibold mb-4 text-white">Your Feedback Matters</h2>
                 <p class="leading-relaxed mb-4">
                     We value the insights of our community. If you have experience with a tool in our catalog or notice
                     any discrepancies in our reviews, we encourage you to reach out.
                 </p>
-                <AppButton to="/submit-tool" primary class="w-full md:w-auto">
+                <AppButton to="/submit-tool" blue class="w-fit">
                     Submit Feedback
                 </AppButton>
             </section>
