@@ -1,26 +1,34 @@
 <template>
     <div class="container mx-auto px-4 py-16 max-w-3xl">
-        <h1 class="text-4xl font-bold mb-8 text-center text-white">How We Test</h1>
+        <h1 class="text-4xl font-bold mb-8 text-center text-white">How We Test the Tools we Review</h1>
 
         <div class="space-y-8 text-gray-300">
             <section>
-                <h2 class="text-2xl font-semibold mb-4 text-white">Our Commitment to Quality</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-white">Introduction</h2>
                 <p class="leading-relaxed">
-                    At devdorne, we understand the importance of reliable and effective developer tools. We take our
-                    testing process seriously, ensuring that every tool in our catalog meets high standards of quality
-                    and functionality.
+                    If you've come here, you're probably wondering about our testing process. It's totally
+                    understandable, given the fact that the internet is flooded with different tool reviews and it's
+                    hard to find a
+                    reliable source.
+                </p>
+                <p class="leading-relaxed mt-4">
+                    We also feel that way and that is why we decided to create this page. We want to help you see the
+                    pros and cons of different programming tools and help you make a good decision.
                 </p>
             </section>
 
             <section>
                 <h2 class="text-2xl font-semibold mb-4 text-white">Our Testing Process</h2>
                 <ul class="list-disc list-inside space-y-2">
-                    <li>Hands-on testing by our expert team</li>
+                    <li>Purchasing the tool</li>
+                    <li>Hands-on testing</li>
                     <li>Verification of all advertised features</li>
                     <li>Performance and stability assessments</li>
                     <li>User experience evaluation</li>
-                    <li>Compatibility checks across different environments</li>
                 </ul>
+                <p class="leading-relaxed mt-4">
+                    We also take a look at the documentation, customer support and pricing.
+                </p>
             </section>
 
             <section>
@@ -35,8 +43,8 @@
             <section>
                 <h2 class="text-2xl font-semibold mb-4 text-white">Continuous Updates</h2>
                 <p class="leading-relaxed">
-                    The world of developer tools is constantly evolving. We regularly revisit and update our reviews to
-                    ensure they reflect the latest versions and features of each tool.
+                    The world of developer tools is constantly evolving. That's why we regularly revisit and update our
+                    reviews to ensure they reflect the latest versions and features of each tool.
                 </p>
             </section>
 
@@ -46,7 +54,7 @@
                     We value the insights of our community. If you have experience with a tool in our catalog or notice
                     any discrepancies in our reviews, we encourage you to reach out.
                 </p>
-                <AppButton to="/submit-tool" blue class="w-fit">
+                <AppButton to="mailto:hello@devdorne.com" blue class="w-fit">
                     Submit Feedback
                 </AppButton>
             </section>

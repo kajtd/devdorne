@@ -6,7 +6,7 @@
             <div class="flex flex-wrap gap-2 justify-center">
                 <AppButton v-for="tag in tags" :key="tag" :class="[
                     'px-4 py-2 rounded-full text-sm',
-                    selectedTag === tag ? 'bg-white text-black' : 'bg-[#2c2c2e] text-white'
+                    selectedTag === tag ? 'bg-white !text-black' : 'bg-[#2c2c2e] text-white'
                 ]" @click="selectTag(tag)">
                     {{ tag }}
                 </AppButton>
