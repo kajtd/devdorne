@@ -27,6 +27,7 @@
     "yarn-upgrade-all": "^0.7.2"
   },
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "@iconify-json/lucide": "1.1.145",
     "@nuxt/image": "1.1.0",
     "@nuxt/types": "^2.17.3",

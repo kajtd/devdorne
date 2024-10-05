@@ -1,7 +1,7 @@
 <template>
     <NuxtLink :to="`/tools/${tool.slug}`" class="block h-full">
         <div
-            class="bg-transparent border border-[#ffffff24] rounded-lg p-6 gap-2 transition-colors h-full flex flex-col">
+            class="bg-transparent shadow-xs shadow-white/90 border border-[#ffffff24] rounded-lg p-6 gap-2 transition-colors h-full flex flex-col">
             <h3 class="text-xl font-semibold text-white">{{ tool.title }}</h3>
             <p class="text-gray-400 mb-4 flex-grow">{{ tool.description }}</p>
             <div class="flex flex-wrap gap-2 mt-3">

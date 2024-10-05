@@ -16,11 +16,12 @@
       </div>
     </div>
 
+
     <div v-if="tool" class="mb-12">
       <div class="flex border-b border-white/15 mb-8">
-        <button v-for="tab in ['general', 'review']" :key="tab" @click="activeTab = tab" :class="['px-6 py-3 font-medium transition-colors duration-200',
+        <button v-for="tab in ['general', 'review', 'reviews']" :key="tab" @click="activeTab = tab" :class="['px-6 py-3 font-medium transition-colors duration-200',
       activeTab === tab ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-400 hover:text-gray-200']">
-          {{ tab === 'general' ? 'General Information' : 'Detailed Review' }}
+          {{ tab === 'general' ? 'General Information' : tab === 'review' ? 'Detailed Review' : 'User Reviews' }}
         </button>
       </div>
 
@@ -51,12 +52,22 @@
       </div>
     </div>
 
+    <div v-if="tool && activeTab === 'reviews'" class="mt-8">
+      <div class="bg-black/30 rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-semibold mb-6 text-white">User Reviews</h2>
+        <Giscus :repo="'kajtd/devdorne'" :repoId="'R_kgDOM1-dOw'" :categoryId="'DIC_kwDOM1-dO84CjFea'"
+          :mapping="'specific'" :term="tool.title + ' Reviews'" :reactionsEnabled="'1'" :emitMetadata="'0'"
+          :inputPosition="'top'" :theme="'dark'" :lang="'en'" :loading="'lazy'" />
+      </div>
+    </div>
+
     <AppRelatedTools v-if="relatedTools" :tools="relatedTools" />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Tool } from '@/types/Tool'
+import Giscus from '@giscus/vue'
 
 const route = useRoute()
 const activeTab = ref('general')
