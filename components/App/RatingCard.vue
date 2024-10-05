@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-black/70 rounded-lg shadow-lg p-6">
+    <div class="border border-[#ffffff24] rounded-lg shadow-lg p-6">
         <h2 class="text-2xl font-semibold mb-4 text-white">User Rating</h2>
         <div class="flex items-center">
             <span class="text-4xl font-bold text-blue-500 mr-3">{{ rating }}</span>

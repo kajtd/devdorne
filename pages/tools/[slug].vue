@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto px-4 py-12 max-w-6xl">
-    <div v-if="tool" class="bg-black/70 rounded-lg shadow-lg p-8 mb-12">
+    <div v-if="tool" class="border border-[#ffffff24] rounded-lg shadow-lg p-8 mb-12">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
         <div class="space-y-8 pb-6">
           <h1 class="text-4xl md:text-5xl font-bold  text-white">{{ tool.title }}</h1>
