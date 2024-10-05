@@ -3,6 +3,7 @@ export type IconName =
   | "star-fill"
   | "star-line"
   | "arrow-right"
+  | "menu"
   | "arrow-left"
   | "line-chart-fill"
   | "add-line"
