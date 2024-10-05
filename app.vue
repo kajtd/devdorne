@@ -18,9 +18,11 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('keydown', handleKeyDown);
 });
-
 const handleKeyDown = (event: KeyboardEvent) => {
-  if (event.key === '/' && !event.ctrlKey && !event.metaKey) {
+  const activeElement = document.activeElement;
+  const isInputField = activeElement instanceof HTMLInputElement || activeElement instanceof HTMLTextAreaElement;
+
+  if (event.key === '/' && !event.ctrlKey && !event.metaKey && !isInputField) {
     event.preventDefault();
     showSearchOverlay.value = true;
   } else if (event.key === 'Escape') {
