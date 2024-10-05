@@ -1,102 +1,68 @@
 <template>
-  <AppLoader v-show="loading" />
-  <AppAlert v-show="alert" :type="alert" :title="alertTitle" :description="alertDescription" />
-  <footer class="py-16 px-4 md:px-0">
-
-    <div class="mx-auto max-w-xl pt-12">
-      <NuxtLink to="/">
-        <img src="/logo.svg" alt="devdorne"
-          class="w-10 h-10 mr-4 transition-all duration-300 hover:ring-2 ring-blue-500 rounded-md hover:scale-110" />
-      </NuxtLink>
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-sm text-gray-100/90 font-medium mb-2 mt-12">Links</p>
-          <ul class="flex flex-col space-y-2 text-white text-sm font-medium">
-            <li v-for="link in links" :key="link._path"
-              class="transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
-              <NuxtLink :to="link._path"
-                class="relative hover:text-blue-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
-                {{ link.name }}
-              </NuxtLink>
-            </li>
-          </ul>
+  <footer class="bg-black text-white py-12 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+        <div class="mb-8 md:mb-0">
+          <NuxtLink to="/">
+            <img src="/logo.svg" alt="devdorne"
+              class="w-10 h-10 transition-all duration-300 hover:ring-2 ring-blue-500 rounded-md hover:scale-110" />
+          </NuxtLink>
         </div>
-        <div>
-          <p class="text-sm text-gray-100/90 font-medium mb-2 mt-12">Legal</p>
-          <ul class="flex flex-col space-y-2 text-white text-sm font-medium">
-            <li v-for="link in legalLinks" :key="link._path"
-              class="transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
-              <NuxtLink :to="link._path"
-                class="relative hover:text-blue-600 transition duration-200 hover:scale-105 hover:-translate-y-[1px]">
-                {{ link.name }}
-              </NuxtLink>
-            </li>
-          </ul>
+        <div class="flex flex-wrap gap-8">
+          <div v-for="(linkGroup, index) in linkGroups" :key="index" class="min-w-[120px]">
+            <h3 class="font-semibold mb-4">{{ linkGroup.title }}</h3>
+            <ul class="space-y-2">
+              <li v-for="link in linkGroup.links" :key="link.path">
+                <NuxtLink :to="link.path" class="text-gray-400 hover:text-white transition-colors text-sm">
+                  {{ link.name }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © {{ new Date().getFullYear() }} devdorne. All rights reserved.
+          </p>
+          <div class="flex space-x-4">
+            <!-- <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <AppIcon name="github" class="w-6 h-6" />
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <AppIcon name="github" class="w-6 h-6" />
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <AppIcon name="github" class="w-6 h-6" />
+            </a> -->
+          </div>
         </div>
       </div>
     </div>
-    <div class="flex items-center gap-2 mx-auto max-w-xl mt-12">
-      <a href="https://github.com" target="_blank">
-        <!-- <Icon name="mdi:github" class="w-5 h-5 text-gray-500/80"></Icon> -->
-      </a>
-      <a href="https://www.linkedin.com" target="_blank">
-        <!-- <Icon name="pajamas:linkedin" class="w-5 h-5 text-gray-500/80"></Icon> -->
-      </a>
-      <a href="https://twitter.com" target="_blank">
-        <!-- <Icon name="prime:twitter" class="w-4 h-4 text-gray-500/80"></Icon> -->
-      </a>
-    </div>
-    <p class="mt-6 text-sm text-gray-100/70 mx-auto max-w-xl">
-      © {{ currentYear }} devdorne All rights reserved.
-    </p>
   </footer>
 </template>
 
 <script setup lang="ts">
-import { useNewsletterSubscription } from "@/composables/useNewsletterSubscription";
+import { useNewsletterSubscription } from '@/composables/useNewsletterSubscription'
 
-const {
-  email,
-  loading,
-  alert,
-  alertTitle,
-  alertDescription,
-  subscribeToNewsletter,
-} = useNewsletterSubscription();
+const { email, subscribeToNewsletter } = useNewsletterSubscription()
 
-const currentYear = computed(() => new Date().getFullYear());
-
-const links = ref([
+const linkGroups = [
   {
-    name: "Home",
-    _path: "/",
+    title: 'Company',
+    links: [
+      { name: 'How we test', path: '/how-we-test' },
+      { name: 'Submit a tool', path: '/submit-tool' },
+    ]
   },
   {
-    name: "Changelog",
-    _path: "/changelog",
-  },
-  {
-    name: "Blog",
-    _path: "/#blog",
-  },
-  {
-    name: "Knowledge Center",
-    _path: "/knowledge-center",
-  },
-]);
-
-const legalLinks = ref([
-  {
-    name: "Privacy Policy",
-    _path: "/legal/privacy-policy",
-  },
-  {
-    name: "Terms of use",
-    _path: "/legal/terms-of-use",
-  },
-  {
-    name: "Disclaimer",
-    _path: "/legal/disclaimer",
-  },
-]);
+    title: 'Legal',
+    links: [
+      { name: 'Privacy Policy', path: '/privacy-policy' },
+      { name: 'Terms of use', path: '/terms-of-use' },
+      { name: 'Disclaimer', path: '/disclaimer' },
+    ]
+  }
+]
 </script>
