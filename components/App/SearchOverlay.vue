@@ -1,12 +1,12 @@
 <template>
     <div v-if="isOpen" class="fixed inset-0 bg-black bg-opacity-70 flex items-start justify-center z-50 pt-20">
-        <div class="w-full max-w-3xl bg-gray-900 rounded-lg shadow-lg overflow-hidden border border-gray-700">
+        <div class="w-full max-w-3xl bg-black/90 rounded-lg shadow-lg overflow-hidden border border-gray-700">
             <div class="p-4">
                 <div class="relative">
                     <AppIcon name="search-line"
                         class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input v-model="searchQuery" placeholder="Search tools..."
-                        class="w-full bg-gray-800 text-white placeholder-gray-400 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500/70"
+                        class="w-full border-gray-600/90 bg-transparent border text-white placeholder-gray-400 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500/70"
                         @input="searchTools" ref="searchInput" @keydown.down.prevent.stop="navigateList('down')"
                         @keydown.up.prevent.stop="navigateList('up')" @keydown.enter.prevent="selectTool()" />
                 </div>
@@ -19,7 +19,7 @@
                     <ul>
                         <li v-for="(tool, index) in group" :key="tool.slug" :class="[
         'py-3 px-4 hover:bg-gray-800 cursor-pointer text-white flex items-center justify-between',
-        { 'bg-gray-800': flattenedTools[selectedIndex] === tool }
+        { 'bg-gray-900/90': flattenedTools[selectedIndex] === tool }
     ]" @click="selectTool(tool)" @mouseover="selectedIndex = getFlatIndex(groupName, index)">
                             <div class="flex items-center">
                                 <AppIcon name="collage-fill" class="mr-3 text-gray-400 w-5 h-6" />
